@@ -1,44 +1,11 @@
 # dart-basics-kuchkovyi
 
-Практична робота 4 «Основи мови Dart» (дисципліна «Програмування для мобільних платформ»).
-Автор: Єгор Кучковий, група Ік-42.
+Практична робота 4 «Основи мови Dart»
+Кучковий Єгор, група Ік-42.
 
 Проєкт містить 5 консольних програм та невелику бібліотеку **University Management System**
 (моделі `Student`, `Course`, `Professor`, `University`, утиліти для обробки даних).
 
-## Встановлення Dart SDK (3.0.0+)
-
-- Windows: `choco install dart-sdk` або інсталятор з <https://dart.dev/get-dart>
-- macOS: `brew tap dart-lang/dart && brew install dart`
-- Linux: інструкція на <https://dart.dev/get-dart>
-
-Перевірка: `dart --version`
-
-## Запуск
-
-```bash
-dart pub get
-
-dart run bin/task1_variables.dart    # Змінні та типи даних
-dart run bin/task2_functions.dart    # Функції, калькулятор, текстовий аналізатор
-dart run bin/task3_classes.dart      # ООП: University Management System
-dart run bin/task4_collections.dart  # Колекції та аналіз CSV (data/students.csv)
-dart run bin/task5_async.dart        # Async: Future, Stream, файли
-```
-
-Програми 4 і 5 запускати з кореня проєкту (вони читають `data/` і пишуть у `output/`).
-
-## Якість коду
-
-```bash
-dart format .
-dart analyze
-dart test
-dart pub global activate coverage
-dart test --coverage=coverage
-dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
-dart doc            # API-документація (dartdoc)
-```
 
 ## Приклад використання класів
 
