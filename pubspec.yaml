@@ -1,15 +1,11 @@
-name: dart_basics_prizvysche
-description: A sample command-line application.
+name: dart_basics_kuchkovyi
+description: Практична робота 4 - Основи мови Dart (University Management System)
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+publish_to: none
 
 environment:
-  sdk: ^3.13.3
-
-# Add regular dependencies here.
-dependencies:
-  path: ^1.9.0
+  sdk: ^3.0.0
 
 dev_dependencies:
-  lints: ^6.0.0
-  test: ^1.25.6
+  lints: ^3.0.0
+  test: ^1.24.0
