@@ -72,8 +72,10 @@ void main() {
 
     test('canStudentEnroll залежить від здачі передумов', () {
       expect(course.canStudentEnroll(makeStudent()), isFalse);
-      expect(course.canStudentEnroll(makeStudent(grades: {'PRG101': 50})), isFalse);
-      expect(course.canStudentEnroll(makeStudent(grades: {'PRG101': 70})), isTrue);
+      expect(course.canStudentEnroll(makeStudent(grades: {'PRG101': 50})),
+          isFalse);
+      expect(
+          course.canStudentEnroll(makeStudent(grades: {'PRG101': 70})), isTrue);
     });
   });
 
@@ -82,7 +84,12 @@ void main() {
 
     setUp(() {
       uni = University(name: 'Test U');
-      uni.addCourse(Course(id: 'PRG101', name: 'P', description: '', credits: 5, instructor: 'X'));
+      uni.addCourse(Course(
+          id: 'PRG101',
+          name: 'P',
+          description: '',
+          credits: 5,
+          instructor: 'X'));
       uni.addStudent(makeStudent(id: 'S1'));
     });
 

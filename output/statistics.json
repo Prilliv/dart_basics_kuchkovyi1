@@ -1,0 +1,15 @@
+{
+  "university": "МНТУ",
+  "totalStudents": 8,
+  "totalProfessors": 0,
+  "totalCourses": 5,
+  "averageGpa": 73.79,
+  "topStudent": "Софія Ткачук",
+  "studentsPerCourse": {
+    "PRG101": 8,
+    "PRG201": 3,
+    "DB101": 5,
+    "MATH101": 3,
+    "NET101": 2
+  }
+}

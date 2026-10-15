@@ -1,0 +1,6 @@
+courseId,courseName,enrolled,graded,averageGrade,passRatePercent
+PRG101,Основи програмування,8,8,73.88,75.0
+PRG201,ООП,3,3,84.67,100.0
+DB101,Бази даних,5,5,74.2,100.0
+MATH101,Математика,3,3,72.0,66.7
+NET101,Мережі,2,2,80.0,100.0

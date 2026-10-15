@@ -5,7 +5,8 @@ import 'package:dart_basics_kuchkovyi/utils/calculator.dart';
 import 'package:dart_basics_kuchkovyi/utils/data_processor.dart';
 import 'package:test/test.dart';
 
-Student st(String id, int year, Map<String, double> grades, [Set<String>? skills]) =>
+Student st(String id, int year, Map<String, double> grades,
+        [Set<String>? skills]) =>
     Student(
       id: id,
       firstName: 'N$id',
@@ -84,7 +85,12 @@ void main() {
 
     test('generateReport', () {
       final uni = University(name: 'U', students: students, courses: [
-        Course(id: 'A', name: 'Alpha', description: '', credits: 1, instructor: 'X'),
+        Course(
+            id: 'A',
+            name: 'Alpha',
+            description: '',
+            credits: 1,
+            instructor: 'X'),
       ]);
       final report = DataProcessor.generateReport(uni);
       expect(report.single['enrolled'], 3);

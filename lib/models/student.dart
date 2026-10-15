@@ -43,7 +43,8 @@ class Student extends Person {
       throw StateError('Студент $id не записаний на курс $courseId');
     }
     if (grade < 0 || grade > 100) {
-      throw ArgumentError.value(grade, 'grade', 'Оцінка має бути в межах 0..100');
+      throw ArgumentError.value(
+          grade, 'grade', 'Оцінка має бути в межах 0..100');
     }
     grades[courseId] = grade;
   }
@@ -80,7 +81,8 @@ class Student extends Person {
       enrolledCourses: List<String>.from(
           (json['enrolledCourses'] as List<dynamic>?) ?? <dynamic>[]),
       grades: rawGrades.map((k, v) => MapEntry(k, (v as num).toDouble())),
-      skills: Set<String>.from((json['skills'] as List<dynamic>?) ?? <dynamic>[]),
+      skills:
+          Set<String>.from((json['skills'] as List<dynamic>?) ?? <dynamic>[]),
     );
   }
 }

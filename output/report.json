@@ -1,0 +1,42 @@
+[
+  {
+    "courseId": "PRG101",
+    "courseName": "Основи програмування",
+    "enrolled": 8,
+    "graded": 8,
+    "averageGrade": 73.88,
+    "passRatePercent": 75.0
+  },
+  {
+    "courseId": "PRG201",
+    "courseName": "ООП",
+    "enrolled": 3,
+    "graded": 3,
+    "averageGrade": 84.67,
+    "passRatePercent": 100.0
+  },
+  {
+    "courseId": "DB101",
+    "courseName": "Бази даних",
+    "enrolled": 5,
+    "graded": 5,
+    "averageGrade": 74.2,
+    "passRatePercent": 100.0
+  },
+  {
+    "courseId": "MATH101",
+    "courseName": "Математика",
+    "enrolled": 3,
+    "graded": 3,
+    "averageGrade": 72.0,
+    "passRatePercent": 66.7
+  },
+  {
+    "courseId": "NET101",
+    "courseName": "Мережі",
+    "enrolled": 2,
+    "graded": 2,
+    "averageGrade": 80.0,
+    "passRatePercent": 100.0
+  }
+]

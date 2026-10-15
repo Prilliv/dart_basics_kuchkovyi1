@@ -26,8 +26,10 @@ void demonstrateLists() {
   print('where >5: ${numbers.where((n) => n > 5).toList()}');
   print('fold sum: ${numbers.fold<int>(0, (a, b) => a + b)}');
   print('reduce max: ${numbers.reduce((a, b) => a > b ? a : b)}');
-  print('any >9: ${numbers.any((n) => n > 9)}, every >0: ${numbers.every((n) => n > 0)}');
-  print('take(3): ${numbers.take(3).toList()}, skip(7): ${numbers.skip(7).toList()}');
+  print(
+      'any >9: ${numbers.any((n) => n > 9)}, every >0: ${numbers.every((n) => n > 0)}');
+  print(
+      'take(3): ${numbers.take(3).toList()}, skip(7): ${numbers.skip(7).toList()}');
   print('expand: ${[1, 2, 3].expand((n) => [n, n * 10]).toList()}');
 
   final names = ['Олег', 'Анна', 'Іван', 'Марія']..sort();
@@ -57,10 +59,12 @@ void demonstrateMaps() {
   stock.putIfAbsent('plum', () => 7);
   stock.update('apple', (v) => v + 10);
   print('stock: $stock');
-  print('transform (map): ${stock.map((k, v) => MapEntry(k.toUpperCase(), v * 2))}');
+  print(
+      'transform (map): ${stock.map((k, v) => MapEntry(k.toUpperCase(), v * 2))}');
   final sortedEntries = stock.entries.toList()
     ..sort((x, y) => y.value.compareTo(x.value));
-  print('сортування за значенням: ${sortedEntries.map((e) => '${e.key}=${e.value}')}');
+  print(
+      'сортування за значенням: ${sortedEntries.map((e) => '${e.key}=${e.value}')}');
 
   // Групування
   final words = ['apple', 'avocado', 'banana', 'blueberry', 'cherry'];
@@ -86,7 +90,8 @@ void demonstrateAdvancedOperations() {
     print('  $row');
   }
   print('\nУнікальні навички: ${DataProcessor.getUniqueSkills(students)}');
-  print('Спільні курси всіх студентів: ${DataProcessor.findCommonCourses(students)}');
+  print(
+      'Спільні курси всіх студентів: ${DataProcessor.findCommonCourses(students)}');
 
   print('\nГрупування за курсом навчання:');
   DataProcessor.groupStudentsByYear(students).forEach((year, list) {
@@ -100,11 +105,37 @@ void demonstrateAdvancedOperations() {
 
   // Університет + звіт
   final uni = University(name: 'МНТУ', students: students, courses: [
-    Course(id: 'PRG101', name: 'Основи програмування', description: '', credits: 5, instructor: 'Клименко'),
-    Course(id: 'PRG201', name: 'ООП', description: '', credits: 4, instructor: 'Клименко', prerequisites: ['PRG101']),
-    Course(id: 'DB101', name: 'Бази даних', description: '', credits: 4, instructor: 'Мельник'),
-    Course(id: 'MATH101', name: 'Математика', description: '', credits: 5, instructor: 'Савчук'),
-    Course(id: 'NET101', name: 'Мережі', description: '', credits: 3, instructor: 'Гнатюк'),
+    Course(
+        id: 'PRG101',
+        name: 'Основи програмування',
+        description: '',
+        credits: 5,
+        instructor: 'Клименко'),
+    Course(
+        id: 'PRG201',
+        name: 'ООП',
+        description: '',
+        credits: 4,
+        instructor: 'Клименко',
+        prerequisites: ['PRG101']),
+    Course(
+        id: 'DB101',
+        name: 'Бази даних',
+        description: '',
+        credits: 4,
+        instructor: 'Мельник'),
+    Course(
+        id: 'MATH101',
+        name: 'Математика',
+        description: '',
+        credits: 5,
+        instructor: 'Савчук'),
+    Course(
+        id: 'NET101',
+        name: 'Мережі',
+        description: '',
+        credits: 3,
+        instructor: 'Гнатюк'),
   ]);
   final report = DataProcessor.generateReport(uni);
   print('\nЗвіт по курсах:');
@@ -116,10 +147,12 @@ void demonstrateAdvancedOperations() {
   Directory(outputDir).createSync(recursive: true);
   const encoder = JsonEncoder.withIndent('  ');
   File('$outputDir/report.json').writeAsStringSync(encoder.convert(report));
-  File('$outputDir/report.csv').writeAsStringSync(DataProcessor.reportToCsv(report));
+  File('$outputDir/report.csv')
+      .writeAsStringSync(DataProcessor.reportToCsv(report));
   File('$outputDir/statistics.json')
       .writeAsStringSync(encoder.convert(uni.generateStatistics()));
-  print('\nЗвіти збережено у $outputDir/ (report.json, report.csv, statistics.json)');
+  print(
+      '\nЗвіти збережено у $outputDir/ (report.json, report.csv, statistics.json)');
 
   _benchmark();
 }
@@ -140,8 +173,10 @@ void _benchmark() {
   sw
     ..reset()
     ..start();
-  final sumChain =
-      data.where((n) => n.isEven).map((n) => n * 2).fold<int>(0, (a, b) => a + b);
+  final sumChain = data
+      .where((n) => n.isEven)
+      .map((n) => n * 2)
+      .fold<int>(0, (a, b) => a + b);
   sw.stop();
   print('where/map/fold: ${sw.elapsedMilliseconds} мс (sum=$sumChain)');
 }

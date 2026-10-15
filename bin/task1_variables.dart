@@ -32,7 +32,8 @@ void demonstrateNumbers() {
   print('double.parse("3.14") = ${double.parse('3.14')}');
   print('int.tryParse("abc") = ${int.tryParse('abc')}');
   print('a.toDouble() = ${a.toDouble()}, b.toInt() = ${b.toInt()}');
-  print('3.7.round() = ${3.7.round()}, floor = ${3.7.floor()}, ceil = ${3.2.ceil()}');
+  print(
+      '3.7.round() = ${3.7.round()}, floor = ${3.7.floor()}, ceil = ${3.2.ceil()}');
   print('3.14159.toStringAsFixed(2) = ${3.14159.toStringAsFixed(2)}');
   print('255.toRadixString(2) = ${255.toRadixString(2)}');
 }
@@ -114,13 +115,18 @@ void demonstrateCollections() {
   fruits.insert(0, 'avocado');
   fruits.remove('banana');
   print('List: $fruits, length: ${fruits.length}, first: ${fruits.first}');
-  print('contains(cherry): ${fruits.contains('cherry')}, indexOf: ${fruits.indexOf('cherry')}');
+  print(
+      'contains(cherry): ${fruits.contains('cherry')}, indexOf: ${fruits.indexOf('cherry')}');
 
   // Set (унікальні значення)
   final numbers = <int>{1, 2, 3, 3, 2, 1};
   numbers.add(4);
   print('Set: $numbers');
-  print('union: ${numbers.union({5, 6})}, intersection: ${numbers.intersection({2, 3, 9})}');
+  print('union: ${numbers.union({5, 6})}, intersection: ${numbers.intersection({
+        2,
+        3,
+        9
+      })}');
 
   // Map
   final ages = <String, int>{'Іван': 20, 'Марія': 19};

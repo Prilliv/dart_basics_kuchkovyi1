@@ -111,8 +111,7 @@ class University {
     if (student == null) throw ArgumentError('Студента $studentId не знайдено');
     if (course == null) throw ArgumentError('Курс $courseId не знайдено');
     if (!course.canStudentEnroll(student)) {
-      throw StateError(
-          '${student.fullName} не може записатись на ${course.id} '
+      throw StateError('${student.fullName} не може записатись на ${course.id} '
           '(вже записаний або не виконані передумови)');
     }
     student.enrollInCourse(course.id);

@@ -45,7 +45,8 @@ void runUniversityDemo() {
     salary: 600000,
   );
   uni.addProfessor(prof);
-  print('\n[2] Додано студентів: ${uni.students.length}, професорів: ${uni.professors.length}');
+  print(
+      '\n[2] Додано студентів: ${uni.students.length}, професорів: ${uni.professors.length}');
 
   // 3. Курси
   uni.addCourse(Course(

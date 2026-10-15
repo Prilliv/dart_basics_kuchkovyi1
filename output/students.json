@@ -1,0 +1,62 @@
+[
+  {
+    "id": "S001",
+    "firstName": "Студент",
+    "lastName": "№1",
+    "birthDate": "2004-02-10T00:00:00.000",
+    "year": 2,
+    "enrolledCourses": [],
+    "grades": {
+      "PRG101": 60.0
+    },
+    "skills": []
+  },
+  {
+    "id": "S002",
+    "firstName": "Студент",
+    "lastName": "№2",
+    "birthDate": "2004-03-10T00:00:00.000",
+    "year": 3,
+    "enrolledCourses": [],
+    "grades": {
+      "PRG101": 70.0
+    },
+    "skills": []
+  },
+  {
+    "id": "S003",
+    "firstName": "Студент",
+    "lastName": "№3",
+    "birthDate": "2004-04-10T00:00:00.000",
+    "year": 4,
+    "enrolledCourses": [],
+    "grades": {
+      "PRG101": 80.0
+    },
+    "skills": []
+  },
+  {
+    "id": "S004",
+    "firstName": "Студент",
+    "lastName": "№4",
+    "birthDate": "2004-05-10T00:00:00.000",
+    "year": 1,
+    "enrolledCourses": [],
+    "grades": {
+      "PRG101": 90.0
+    },
+    "skills": []
+  },
+  {
+    "id": "S005",
+    "firstName": "Студент",
+    "lastName": "№5",
+    "birthDate": "2004-06-10T00:00:00.000",
+    "year": 2,
+    "enrolledCourses": [],
+    "grades": {
+      "PRG101": 100.0
+    },
+    "skills": []
+  }
+]

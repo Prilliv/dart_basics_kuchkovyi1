@@ -38,17 +38,15 @@ Future<List<Student>> loadStudentsFromFile(String filename) async {
   }
   final content = await file.readAsString();
   final data = jsonDecode(content) as List<dynamic>;
-  return data
-      .map((e) => Student.fromJson(e as Map<String, dynamic>))
-      .toList();
+  return data.map((e) => Student.fromJson(e as Map<String, dynamic>)).toList();
 }
 
 Future<void> saveStudentsToFile(List<Student> students, String filename) async {
   final file = File(filename);
   await file.parent.create(recursive: true);
   const encoder = JsonEncoder.withIndent('  ');
-  await file.writeAsString(
-      encoder.convert(students.map((s) => s.toJson()).toList()));
+  await file
+      .writeAsString(encoder.convert(students.map((s) => s.toJson()).toList()));
 }
 
 Stream<Student> studentStream({int count = 5}) async* {
@@ -115,7 +113,8 @@ Future<void> demonstrateStreams() async {
   }
 
   print('where + map (курс >= 2):');
-  final names = studentStream(count: 5).where((s) => s.year >= 2).map((s) => s.fullName);
+  final names =
+      studentStream(count: 5).where((s) => s.year >= 2).map((s) => s.fullName);
   await names.forEach((n) => print('  $n'));
 
   print('listen + Completer:');
@@ -130,7 +129,8 @@ Future<void> demonstrateStreams() async {
   );
   await done.future;
 
-  final total = await studentStream(count: 4).fold<double>(0, (sum, s) => sum + s.gpa);
+  final total =
+      await studentStream(count: 4).fold<double>(0, (sum, s) => sum + s.gpa);
   print('fold: сума GPA = $total');
 }
 
@@ -173,7 +173,8 @@ Future<void> demonstrateFileOperations() async {
   // Performance: синхронний vs асинхронний запис 30 файлів
   final sw = Stopwatch()..start();
   for (var i = 0; i < 30; i++) {
-    File('$outputDir/sync_$i.json').writeAsStringSync(jsonEncode(students.first.toJson()));
+    File('$outputDir/sync_$i.json')
+        .writeAsStringSync(jsonEncode(students.first.toJson()));
   }
   final syncMs = sw.elapsedMilliseconds;
   sw
@@ -181,7 +182,9 @@ Future<void> demonstrateFileOperations() async {
     ..start();
   await Future.wait([
     for (var i = 0; i < 30; i++)
-      File('$outputDir/async_$i.json').writeAsString(jsonEncode(students.first.toJson())),
+      File('$outputDir/async_$i.json')
+          .writeAsString(jsonEncode(students.first.toJson())),
   ]);
-  print('Запис 30 файлів: sync=$syncMs мс, async(Future.wait)=${sw.elapsedMilliseconds} мс');
+  print(
+      'Запис 30 файлів: sync=$syncMs мс, async(Future.wait)=${sw.elapsedMilliseconds} мс');
 }

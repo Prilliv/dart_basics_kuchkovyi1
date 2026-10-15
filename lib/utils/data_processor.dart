@@ -44,7 +44,8 @@ class DataProcessor {
   }
 
   // ---------- Maps ----------
-  static Map<String, List<Student>> groupStudentsByYear(List<Student> students) {
+  static Map<String, List<Student>> groupStudentsByYear(
+      List<Student> students) {
     final groups = <String, List<Student>>{};
     for (final s in students) {
       groups.putIfAbsent('Курс ${s.year}', () => []).add(s);
@@ -76,9 +77,8 @@ class DataProcessor {
         for (final s in enrolled)
           if (s.grades.containsKey(course.id)) s.grades[course.id]!,
       ];
-      final avg = grades.isEmpty
-          ? 0.0
-          : grades.reduce((a, b) => a + b) / grades.length;
+      final avg =
+          grades.isEmpty ? 0.0 : grades.reduce((a, b) => a + b) / grades.length;
       final passed = grades.where((g) => g >= Student.passingGrade).length;
       return {
         'courseId': course.id,
@@ -137,11 +137,8 @@ class DataProcessor {
     return buffer.toString();
   }
 
-  static List<String> _splitList(String value) => value
-      .split(';')
-      .map((e) => e.trim())
-      .where((e) => e.isNotEmpty)
-      .toList();
+  static List<String> _splitList(String value) =>
+      value.split(';').map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
 }
 
 /// Текстовий аналізатор (підрахунок слів, символів, речень).

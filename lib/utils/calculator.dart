@@ -18,7 +18,8 @@ class Calculator {
     return sqrt(x);
   }
 
-  static double percentOf(double percent, double value) => value * percent / 100;
+  static double percentOf(double percent, double value) =>
+      value * percent / 100;
 
   /// Універсальний виклик за символом операції: + - * / ^ %
   static double calculate(double a, String op, double b) => switch (op) {
